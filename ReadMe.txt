@@ -1,0 +1,8 @@
+Write a method that finds, efficiently with respect to time used, all numbers that occur exactly once in the input collection.
+For example, FindUniqueNumbers(new int[]{1,2,1,3}) should return {2,3}.
+
+This was a coding test from testdome.com for position at the company Prizelogic. 
+I think they gave 20 min for it, which is more than enough for senior/midlevel programmer.
+
+Anyway.. enjoy!
+Serge Klokov 2020

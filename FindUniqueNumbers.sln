@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindUniqueNumbers", "FindUniqueNumbers\FindUniqueNumbers.csproj", "{2ED90211-2B73-4935-B730-70BD959962F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A8BF4548-7165-4E2A-838A-09873917837F}"
+	ProjectSection(SolutionItems) = preProject
+		09.PNG = 09.PNG
+		ReadMe.txt = ReadMe.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2ED90211-2B73-4935-B730-70BD959962F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ED90211-2B73-4935-B730-70BD959962F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ED90211-2B73-4935-B730-70BD959962F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ED90211-2B73-4935-B730-70BD959962F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5CE92BF-68AA-47AC-B5F4-42C8B89B3D25}
+	EndGlobalSection
+EndGlobal
