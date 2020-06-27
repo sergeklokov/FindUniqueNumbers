@@ -10,11 +10,14 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            int[] numbers = new int[] { 1, 2, 1, 3, 0, 15, 15 };
+            int[] numbers = new int[] { 1, 2, 1, 3, 0, 15, 15, 55, 71, 71 };
 
+            Console.Write("Only unique numbers (quick): ");
+            IEnumerable<int> duplicates;
+            Print(FindUniqueNumbersQuick(numbers, out duplicates));
 
-            Console.Write("Distinct values: ");
-            Print(GetDistinctNumbers(numbers));
+            Console.Write("Duplicates: ");
+            Print(duplicates);
 
             Console.Write("Only unique numbers (standard): ");
             Print(FindUniqueNumbersStandard(numbers));
@@ -22,24 +25,47 @@ namespace ConsoleApp2
             Console.Write("Only unique numbers (LINQ): ");
             Print(FindUniqueNumbersLinq(numbers));
 
+            Console.Write("Distinct values: ");
+            Print(GetDistinctNumbers(numbers));
 
+            Console.WriteLine();
+            Console.WriteLine("Press any* key.                                                * ..where is it?");
             Console.ReadKey();
         }
 
-        private static void Print(IEnumerable<int> collection) {
-            foreach (var n in collection)
-                Console.Write(n + " ");
+        
 
-            Console.WriteLine();
+        // it would be quicker if I would not return duplicates
+        private static IEnumerable<int> FindUniqueNumbersQuick(int[] numbers, out IEnumerable<int> duplicates)
+        {
+            var unique = new List<int>();
+            var dups = new List<int>();
+
+            foreach (var n in numbers)
+            {
+                if (dups.Contains(n))
+                    continue;
+
+                if (unique.Contains(n))
+                {
+                    unique.Remove(n);
+                    dups.Add(n);
+                    continue;
+                }
+
+                unique.Add(n);
+            }
+
+            duplicates = dups;
+            return unique;
         }
 
+        // I think it would be the slowest way. But maybe it is the fast to develop
         private static IEnumerable<int> FindUniqueNumbersLinq(int[] numbers)
         {
-
             Dictionary<int, int> counts = numbers
                 .GroupBy(n => n)
                 .ToDictionary(k => k.Key, v => v.Count());
-
 
             var unique = counts
                 .Where(c => c.Value == 1)
@@ -50,18 +76,17 @@ namespace ConsoleApp2
 
         private static IEnumerable<int> FindUniqueNumbersStandard(int[] numbers)
         {
-            var distinct = numbers.Distinct(); // let's just use LINQ
+            var distinct = numbers.Distinct(); // let's just use LINQ or you can use GetDistinctNumbers (see below)
 
             var unique = new List<int>();
 
             foreach (var d in distinct)
             {
                 var count = 0;
+
                 foreach (var n in numbers)
-                {
                     if (n == d)
                         count++;
-                }
 
                 if (count == 1)
                     unique.Add(d);
@@ -79,9 +104,15 @@ namespace ConsoleApp2
                     distinctList.Add(n);
 
             return distinctList;
-
         }
 
+        private static void Print(IEnumerable<int> collection)
+        {
+            foreach (var n in collection)
+                Console.Write(n + " ");
+
+            Console.WriteLine();
+        }
 
     }
 }
