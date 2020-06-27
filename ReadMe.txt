@@ -7,6 +7,7 @@ I think they gave 20 min for it, which is more than enough for senior/midlevel p
 So.. I think they want the quickest algorithm. 
 I would prefer the most quick-to-write algorithm, because I came from the "Quick-And-Dirty" startup culture.
 But ok there are few solutions here.
+Also I decided to get duplicates, we may need it too.
 
 Anyway.. enjoy!
 Serge Klokov 2020
